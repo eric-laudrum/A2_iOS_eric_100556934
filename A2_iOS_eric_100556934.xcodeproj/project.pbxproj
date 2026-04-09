@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		094541852F880AE700A65777 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 094541842F880AE300A65777 /* README.md */; };
+		0945418B2F88190D00A65777 /* ProductModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 094541892F88190D00A65777 /* ProductModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		094541762F88093500A65777 /* A2_iOS_eric_100556934.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = A2_iOS_eric_100556934.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		094541842F880AE300A65777 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0945418A2F88190D00A65777 /* ProductModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProductModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -37,6 +39,7 @@
 		0945416D2F88093400A65777 = {
 			isa = PBXGroup;
 			children = (
+				094541892F88190D00A65777 /* ProductModel.xcdatamodeld */,
 				094541842F880AE300A65777 /* README.md */,
 				094541782F88093500A65777 /* A2_iOS_eric_100556934 */,
 				094541772F88093500A65777 /* Products */,
@@ -126,6 +129,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0945418B2F88190D00A65777 /* ProductModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +343,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		094541892F88190D00A65777 /* ProductModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0945418A2F88190D00A65777 /* ProductModel.xcdatamodel */,
+			);
+			currentVersion = 0945418A2F88190D00A65777 /* ProductModel.xcdatamodel */;
+			path = ProductModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0945416E2F88093400A65777 /* Project object */;
 }
