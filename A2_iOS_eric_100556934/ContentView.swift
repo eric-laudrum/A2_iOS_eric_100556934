@@ -6,16 +6,36 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ContentView: View {
+    
+    
+    // Fetch all products
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Product.productName, ascending: true)], animation: .default)
+    
+    private var products: FetchedResults<Product>
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack{
+            
+            List{
+                ForEach(products) { product in
+                    NavigationLink{
+                        ProductDetailView(product: product) // TBD
+                    } label: {
+                        VStack(){
+                            Text(product.productName ?? "product")
+                                .font(.headline)
+                        }
+                        
+                
+                    }
+                }
+            }
         }
-        .padding()
+    
     }
 }
 
