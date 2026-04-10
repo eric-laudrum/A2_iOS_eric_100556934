@@ -61,12 +61,21 @@ struct ContentView: View {
                         NavigationLink{
                             ProductDetailView(product: product)
                         } label: {
-                            VStack(alignment: .leading){
-                                Text(product.productName ?? "product")
-                                    .font(.headline)
-                                Text(product.productDescription ?? "")
-                                    .font(.subheadline)
-                                    .lineLimit(2)
+                            HStack{
+                                VStack(alignment: .leading){
+                                    Text(product.productName ?? "product")
+                                        .font(.headline)
+                                    Text(product.productDescription ?? "")
+                                        .font(.subheadline)
+                                        .lineLimit(2)
+                                }
+                                
+                                Text("$\(product.productPrice, specifier: "%.0f")")
+                                        .font(.caption)
+                                     
+                                        .padding(10)
+                                        .background(Color.blue.opacity(0.1))
+                                        .cornerRadius(10)
                             }
                         }
                     }
