@@ -39,21 +39,40 @@ struct ContentView: View {
         NavigationStack{
             
             List{
-                ForEach(filteredProducts) { product in
-                    NavigationLink{
-                        ProductDetailView(product: product)
-                    } label: {
-                        VStack(alignment: .leading){
-                            Text(product.productName ?? "product")
-                                .font(.headline)
-                            Text(product.productDescription ?? "")
-                                .font(.subheadline)
-                                .lineLimit(2)
+                
+                // Display first product in list
+                if let firstProduct = products.first, searchText.isEmpty{
+                    Section(header: Text("Feature")){
+                        NavigationLink(destination: ProductDetailView(product: firstProduct)){
+                            
+                            VStack(alignment: .leading){
+                                Text(firstProduct.productName ?? "product")
+                                    .font(.headline)
+                                Text(firstProduct.productDescription ?? "")
+                                    .font(.subheadline)
+                                    .lineLimit(2)
+                            }
+                        }
+                    }
+                }
+                Section(header: Text("All Products")){
+                    
+                    ForEach(filteredProducts) { product in
+                        NavigationLink{
+                            ProductDetailView(product: product)
+                        } label: {
+                            VStack(alignment: .leading){
+                                Text(product.productName ?? "product")
+                                    .font(.headline)
+                                Text(product.productDescription ?? "")
+                                    .font(.subheadline)
+                                    .lineLimit(2)
+                            }
                         }
                     }
                 }
             }
-            .navigationTitle("Products")
+            .navigationTitle("Sampler & Sequencers")
             
             .toolbar{
                 ToolbarItem( placement: .navigationBarTrailing){
