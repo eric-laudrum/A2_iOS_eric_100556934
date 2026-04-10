@@ -4,6 +4,9 @@
 ### Eric Laudrum
 ### 100556934
 
+### GitHub Repo
+https://github.com/eric-laudrum/A2_iOS_eric_100556934
+
 ### Description
 An iOS application that manages a catalogue of audio samplers, complete with name, description, price, and vendors. 
 
@@ -13,11 +16,9 @@ An iOS application that manages a catalogue of audio samplers, complete with nam
 - Database: Core Data
 - IDE: X Code
 
-
 ### Implementation
 - Build & Run
 - or Cmd + R
-
 
 ### Checklist
 - [x] Project setup
