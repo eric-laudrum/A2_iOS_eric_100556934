@@ -48,13 +48,18 @@ struct ContentView: View {
                             VStack(alignment: .leading){
                                 Text(firstProduct.productName ?? "product")
                                     .font(.headline)
+                                    .bold()
+                                    
                                 Text(firstProduct.productDescription ?? "")
                                     .font(.subheadline)
-                                    .lineLimit(2)
+                                    .lineLimit(3)
                             }
+                            .padding(.vertical, 5)
                         }
                     }
                 }
+                
+                // Display All Products
                 Section(header: Text("All Products")){
                     
                     ForEach(filteredProducts) { product in
@@ -67,7 +72,7 @@ struct ContentView: View {
                                         .font(.headline)
                                     Text(product.productDescription ?? "")
                                         .font(.subheadline)
-                                        .lineLimit(2)
+                                        .lineLimit(1)
                                 }
                                 
                                 Text("$\(product.productPrice, specifier: "%.0f")")
