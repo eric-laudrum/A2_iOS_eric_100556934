@@ -86,6 +86,13 @@ struct ContentView: View {
                     }
                 }
             }
+            
+            // Handle empty lists (filter with no products)
+            .overlay{
+                if filteredProducts.isEmpty && !searchText.isEmpty {
+                        ContentUnavailableView.search(text: searchText)
+                    }
+            }
             .navigationTitle("Sampler & Sequencers")
             
             .toolbar{
