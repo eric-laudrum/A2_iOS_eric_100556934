@@ -20,6 +20,21 @@ struct ContentView: View {
     private var products: FetchedResults<Product>
     
     
+    @State private var searchText = ""
+    @State private var showingAddSheet = false
+    
+    var filteredProducts: [ Product ]{
+        if searchText.isEmpty{
+            return Array(products)
+        } else{
+            return products.filter {
+                ($0.productName?.localizedCaseInsensitiveContains(searchText) ?? false) ||
+                ($0.productDescription?.localizedCaseInsensitiveContains(searchText) ?? false)
+            }
+        }
+    }
+    
+    
     var body: some View {
         NavigationStack{
             
@@ -28,18 +43,32 @@ struct ContentView: View {
                     NavigationLink{
                         ProductDetailView(product: product)
                     } label: {
-                        VStack(){
+                        VStack(alignment: .leading){
                             Text(product.productName ?? "product")
                                 .font(.headline)
+                            Text(product.productDescription ?? "")
+                                .font(.subheadline)
+                                .lineLimit(2)
                         }
-                        
-                
                     }
                 }
             }
             .navigationTitle("Products")
+            
+            .toolbar{
+                ToolbarItem( placement: .navigationBarTrailing){
+                    Button( action : {
+                        showingAddSheet = true
+                    }){
+                        Image(systemName: "plus")
+                    }
+                }
+            }
+            
+            .sheet(isPresented: $showingAddSheet){
+                AddProductView()
+            }
         }
-    
     }
 }
 
