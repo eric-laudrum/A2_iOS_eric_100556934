@@ -82,7 +82,7 @@ struct ProductDetailView: View{
                             .font(.title)
                         Text("Provider: \(product.productProvider ?? "N/A")")
 
-                        Text("Price: $\(product.productPrice, specifier: "$.2f")")
+                        Text("Price: $\(product.productPrice, specifier: "%.2f")")
                     }
                     
                     Section(header: Text("Description")) {
