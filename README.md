@@ -4,9 +4,8 @@
 ### Eric Laudrum
 ### 100556934
 
-
 ### Description
-An iOS application that manages a catalogue of products.
+An iOS application that manages a catalogue of audio samplers, complete with name, description, price, and vendors. 
 
 ### Sofware & Languages
 - Language: Swift
@@ -27,11 +26,12 @@ An iOS application that manages a catalogue of products.
 - [x] Data
     - [x] Create data file for the product model
     - [x] Define product entity and attributes
-    - [] Set up the persistence file for database management
-- [] Seeding data
-    - [] Generate the initial product catalogue
+    - [x] Set up the persistence file for database management
+- [x] Seeding data
+    - [x] Generate the initial product catalogue
 - [] UI
-    - [] Home
-    - [] Detail view
-    - [] Navigation stack
+    - [x] Home
+    - [x] Detail view
+    - [x] Navigation stack
+    - [x] Highlight first item in the list
     
