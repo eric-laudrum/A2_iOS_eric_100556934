@@ -95,12 +95,14 @@ struct ContentView: View {
             }
             .navigationTitle("Sampler & Sequencers")
             
+            
             .toolbar{
                 ToolbarItem( placement: .navigationBarTrailing){
                     Button( action : {
                         showingAddSheet = true
                     }){
                         Image(systemName: "plus")
+                        
                     }
                 }
             }

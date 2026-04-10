@@ -19,6 +19,7 @@ struct ProductDetailView: View{
                 Text("Provider: \(product.productProvider ?? "N/A")")
 
                 Text("Price: $\(product.productPrice, specifier: "%.2f")")
+                Label("Product Info", systemImage: "info.circle.fill")
             }
             
             Section(header: Text("Description")) {
