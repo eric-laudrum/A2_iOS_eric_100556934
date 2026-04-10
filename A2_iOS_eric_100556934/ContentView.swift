@@ -39,7 +39,7 @@ struct ContentView: View {
         NavigationStack{
             
             List{
-                ForEach(products) { product in
+                ForEach(filteredProducts) { product in
                     NavigationLink{
                         ProductDetailView(product: product)
                     } label: {
@@ -68,6 +68,7 @@ struct ContentView: View {
             .sheet(isPresented: $showingAddSheet){
                 AddProductView()
             }
+            .searchable(text: $searchText, prompt: "Search Products")
         }
     }
 }
